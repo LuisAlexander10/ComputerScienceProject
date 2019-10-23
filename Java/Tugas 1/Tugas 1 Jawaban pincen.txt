@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class Ayam {
+ public static int total = 0;
+ public static int angka1,angka2,oper;
+ 
+ public static void menu2() {
+  System.out.println("1. Addition");
+  System.out.println("2. Subtraction");
+  System.out.println("3. Multiplication");
+  System.out.println("4. Division");
+  System.out.println("5. Modulo");
+  System.out.println("6. Clear Total");
+  System.out.println("7. Exit");
+  System.out.print("Operator [1..7] : ");
+  Scanner in = new Scanner(System.in);
+  oper = in.nextInt();
+  if(oper == 7) {
+   menu();
+  }
+  System.out.print("Input Number : ");
+  angka2 = in.nextInt();
+  calc();
+  
+ }
+ public static void menu() {
+ 
+  System.out.printf("Calculator\n");
+  System.out.printf("==============\n");
+  System.out.println("Total = " + total);
+  System.out.printf("\n\n");
+  System.out.print("Input Number : ");
+  Scanner in = new Scanner(System.in);
+  angka1 = in.nextInt();
+  menu2();
+ 
+ }
+ public static void calc() {
+  if(oper == 7) {
+   menu();
+  }
+  if(oper == 1) {
+   total += angka1 + angka2;
+  }
+  else if(oper == 2) {
+   total += angka1 - angka2;
+  }
+  else if(oper == 3) {
+   total += angka1 * angka2;
+  }
+  else if(oper == 4) {
+   total += angka1/angka2;
+  }
+  else if(oper == 5) {
+   total += angka1%angka2;
+  }
+  else if(oper == 6) {
+   total = 0;
+  }
+  else {
+   menu();
+  }
+  menu();
+ }
+ 
+ public static void main(String[] args) {
+  menu();
+  
+ }
+
+}
